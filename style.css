@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(102, 102, 102);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+Textfeld {
+    color: white;
+    margin-top: 1000px;
+}
