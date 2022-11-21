@@ -243,7 +243,7 @@ input {
     padding: 15px;
     text-align: center;
     color: #ffff;
-    margin-top: 250px;
+    margin-top: 30px;
     margin-left: 40%;
     background: transparent;
     cursor: text;
@@ -263,7 +263,7 @@ input:hover {
     padding: 15px;
     text-align: center;
     color: #ffff;
-    margin-top: 30px;
+    margin-top: 250px;
     margin-left: 40%;
     background: transparent;
     cursor: text;
@@ -326,4 +326,9 @@ footer {
     color: red;
     font-size: 25px;
     white-space: nowrap;
+}
+
+#überprüfungstext {
+    color: #fff;
+    font-size: 20px;
 }

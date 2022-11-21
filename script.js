@@ -1,6 +1,7 @@
 let dictionary = JSON.parse(localStorage.getItem('dictionary')) || {
 
 };
+let ran_key;
 
 function übunghinuzfügen() {
     dictionary[Frage.value] = input2.value;
@@ -8,15 +9,34 @@ function übunghinuzfügen() {
     Frage.value = "";
     input2.value = "";
 
-    localStorage.setItem('fragenundantworten', JSON.stringify(dictionary));
+    localStorage.setItem('dictionary', JSON.stringify(dictionary));
+    render();
 }
 
 function render() {
+    Übungsliste.innerHTML = '';
     for (let key in dictionary) {
-        Übungsliste.innerHTML += `<h1></h1> <li>${key} &nbsp; <b id="Abtrennung">L ö s u n g 💡:</b> &nbsp; ${dictionary[key]}</li>`;
+        Übungsliste.innerHTML += `<li> <b id="Abtrennung">F r a g e :</b> &nbsp ${dictionary[key]} &nbsp <b id="Abtrennung">L ö s u n g 💡:</b> &nbsp ${key}</li>`;
     }
 }
 
 function löschen() {
     localStorage.clear();
+}
+
+function nächstübung() {
+    let obj_keys = Object.keys(dictionary);
+    ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
+    diefrage.innerHTML = `${dictionary[ran_key]}?`;
+
+    Antwort.value = "";
+}
+
+function richtigfalsch() {
+    if (Antwort.value == ran_key) {
+        überprüfungstext.innerHTML = `Richtig (;`;
+    } else {
+        überprüfungstext.innerHTML = `Das ist leider falsch ;(`;
+    }
+    nächstübung();
 }

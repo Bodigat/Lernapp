@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="render()">
     <header>
         <div>
             <span>Übungen-Hinzufügen</span>
@@ -20,16 +20,15 @@
     </header>
 
     <form onsubmit="übunghinuzfügen(); return false;">
-        <input id="Frage" type="text" placeholder="F r a g e  ?"></input>
+        <input id="input2" type="text" placeholder="F r a g e  ?"></input>
 
-        <input id="input2" type="text" placeholder="L ö s u n g 💡"></input>
+        <input id="Frage" type="text" placeholder="L ö s u n g 💡"></input>
 
         <button>Hinzufügen</button>
     </form>
 
 
     <ul id="Übungsliste">
-        <li></li>
     </ul>
 
     <footer>
